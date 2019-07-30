@@ -12,8 +12,7 @@ Attended class on recursion.
 
 This lab is important because of the following:
 1.	The projects do not have (minimal) recursion as part of their requirements
-2.	There are recursive problems on the mid-term and final exams.  
-3.	This lab will be the only homework provided for you to work on recursion.  
+2.	There are recursive problems on the mid-terms. 
 
 So, lets practice. 😊
 

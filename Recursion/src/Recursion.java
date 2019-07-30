@@ -86,11 +86,11 @@ public class Recursion{
 
     public static void main(String []args){
         long initTime;
-//        System.out.println("Rec result: " + Recursion.fib(40) + " Time: " + (System.nanoTime() - initTime));
-
         initTime = System.nanoTime();
-        System.out.println("Iter result: " +Recursion.iterFib(40000) + " Time: " + (System.nanoTime() - initTime));
+        System.out.println("Rec result: " + Recursion.fib(40) + " Time: " + (System.nanoTime() - initTime));
         initTime = System.nanoTime();
-        System.out.println("Iter2 result: " +Recursion.iterFib2(40000) + " Time: " + (System.nanoTime() - initTime));
+        System.out.println("Iter result: " +Recursion.iterFib(40) + " Time: " + (System.nanoTime() - initTime));
+        initTime = System.nanoTime();
+        System.out.println("Iter2 result: " +Recursion.iterFib2(40) + " Time: " + (System.nanoTime() - initTime));
     }
 }

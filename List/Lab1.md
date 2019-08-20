@@ -9,7 +9,6 @@ Attended class and review your notes on Linked list.
 ## Objectives (after completing the lab you will be able to do:)
 
 * To write simple methods the modify a linked list
-* Help you complete the last steps of project 4
 
 ## Activities:
 1.	Download the files Node.java and LinkedListLab.java, then copy the files into IntelliJ (or your preferred IDE).

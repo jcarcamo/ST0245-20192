@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Graph<DATA> {
     private final int MAX_VERT = 20;
     private Vertex<DATA> V[];
@@ -57,6 +59,60 @@ public class Graph<DATA> {
             V[i].setVisited(false);
         }
 
+        return count;
+    }
+
+    HashMap<Vertex,Vertex> parent  = new HashMap<>();
+
+    public int BFS(){
+        int count = 0;
+        Vertex s = V[0];
+        s.setVisited(true);
+        parent.put(s, null);
+        Queue<Integer> queue = new ArrayDeque<>();
+        queue.add(0);
+        while(!queue.isEmpty()){
+            int currentIdx = queue.remove();
+            int idx = findNextNeighbor(currentIdx);
+            while(idx != -1){
+                V[idx].setVisited(true);
+                queue.add(idx);
+                count++;
+                idx = findNextNeighbor(currentIdx);
+                parent.put(V[idx], V[currentIdx]);
+            }
+        }
+
+        return count;
+    }
+
+
+    public int RecursiveDFS(){
+        int count = 0;
+        for(int i = 0; i < nVerts; i++){
+            Vertex v = V[i];
+            if(!v.isVisited())
+                v.setVisited(true);
+            count += RecursiveDFSVisit(i);
+        }
+        for(int i=0; i < nVerts; i++){
+            Vertex v = V[i];
+            v.setVisited(false);
+        }
+        return count;
+    }
+
+    public int RecursiveDFSVisit(int vIdx){
+        int count = 0;
+        int idx = findNextNeighbor(vIdx);
+        while(idx  != -1){
+            Vertex u = V[idx];
+            if(!u.isVisited()) {
+                u.setVisited(true);
+                count = 1 + RecursiveDFSVisit(idx);
+            }
+            idx = findNextNeighbor(vIdx);
+        }
         return count;
     }
 
